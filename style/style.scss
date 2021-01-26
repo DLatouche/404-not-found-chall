@@ -1,0 +1,132 @@
+@import "variables";
+
+body {
+  color: $black;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.title {
+  text-transform: uppercase;
+  font-family: Inconsolata;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.08em;
+  margin: 3% 5%;
+}
+
+.container {
+  flex-grow: 2;
+  margin: 3% 5%;
+  font-family: "Space Mono";
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .left {
+    min-width: 50%;
+    max-width: 540px;
+    img {
+      animation: blink 3s infinite, rotation 10s ease infinite;
+      max-width: 540px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .right {
+    min-width: 50%;
+    max-width: 540px;
+    .info {
+      font-family: Space Mono;
+      font-size: 64px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 95px;
+      letter-spacing: -0.035em;
+      text-align: left;
+    }
+    .details {
+      font-family: Space Mono;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 36px;
+      letter-spacing: -0.035em;
+      margin: 36px 0;
+    }
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+  20% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+button {
+  font-family: Space Mono;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: -0.035em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $black;
+  border: none;
+  padding: 23px 43px;
+  margin: 28px 0;
+}
+
+footer {
+  align-self: center;
+  margin: 3%;
+
+  p {
+    margin: 10px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0em;
+  }
+}
+
+.enter {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.7s, opacity 0.7s;
+}
+
+.enter-left-a {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.enter-right-a {
+  opacity: 0;
+  transform: translateX(50px);
+}
